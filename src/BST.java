@@ -61,14 +61,9 @@ public class BST {
         else if (node.getVal() == val) {
             return true;
         }
-        // Checks if value is greater or less than node value
-        // Uses recursion to check if that side contains the value
-        if (val > node.getVal()) {
-            return searchHelp(val, node.getRight());
-        }
-        else {
-            return searchHelp(val, node.getLeft());
-        }
+
+        // Uses recursion to check if either side contains the value
+        return searchHelp(val, node.getRight()) || searchHelp(val, node.getLeft());
     }
 
     /**
